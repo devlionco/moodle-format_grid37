@@ -1,0 +1,166 @@
+.format-grid {
+    // hidden section settings
+    .gtopics {
+        .section:not(.hidden-section) + .hidden-section:before {
+            content: "";
+            display: block;
+            position: static;
+            width: 100%;
+            height: 2px;
+            background-color: red;
+            margin: 2rem 0;
+        }
+    }
+}
+
+.format-grid {
+    .course-content {
+        .section-navigation.navigationtitle {
+            .mdl-left,
+            .mdl-right {
+                display: none;
+            }
+        }
+        .section-navigation.mdl-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            div.mdl-align {
+                order: 1;
+                margin-right: 100%;
+                margin-bottom: 10px;
+            }
+            span.mdl-left {
+                order: 2;
+            }
+            span.mdl-right {
+                order: 3;
+            }
+        }
+    }
+
+    .section li.activity {
+        .mod-indent-outer {
+            display: block;
+            & > div {
+                display: flex;
+            }
+        }
+        .actions {
+            position: static;
+            align-self: center;
+        }
+        .activityinstance {
+            display: flex;
+            flex-grow: 1;
+        }
+    }
+}
+
+#gridiconcontainer {
+
+    ul.gridicons {
+        position: relative;
+        padding-top: 60px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+
+    ul.gridicons > li {
+        transition: .3s;
+    }
+
+    .hidden-section {
+        opacity: 0.4;
+    }
+
+    .pinnedsections {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+    }
+
+    .gridicons .pinnedsections li.pinned {
+        position: static;
+        background-color: #19284f;
+        background-image: url('[[pix:format_grid|pushpin]]');
+        background-size: 10%;
+        background-position: 10px;
+        background-repeat: no-repeat;
+        border-radius: 14px;
+        top: -10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 18px;
+        height: 55px;
+        line-height: 55px;
+        width: 170px;
+        overflow: hidden;
+
+        & a {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+            & .icon_content {
+                color: #fff;
+                height: auto;
+                width: 120px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                text-align: center;
+            }
+        }
+        & img {
+            display: none;
+        }
+        & .image_holder {
+            display: none;
+        }
+    }
+
+    .gridicons li:not(.pinned) {
+        order: 2;
+    }
+}
+
+
+// new setting
+
+// .format-grid .section li.activity .mod-indent-outer {
+//     display: block;
+// }
+//
+// .format-grid .mod-indent-outer > div {
+//     display: flex;
+// }
+
+// .format-grid .section li.activity .actions {
+//     position: static;
+//     align-self: center;
+// }
+//
+// .format-grid .section li.activity .activityinstance {
+//     display: flex;
+//     flex-grow: 1;
+// }
+// new setting end
+
+// for edit mode
+.editing {
+    #gridiconcontainer  .gridicons .pinnedsections > li.pinned {
+        & a {
+            display: none;
+        }
+        & .gridicon_link {
+            display: flex;
+        }
+
+    }
+    .single-section .mdl-right {
+        display: block;
+    }
+}
